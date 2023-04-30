@@ -9,7 +9,12 @@ namespace quiz.Model
     class Model
     {
         public String chooseFile() {
-            return "";
+            return "wow";
+        }
+        public List<String> GetQuizList()
+        {
+            List<String> numbers = new List<String>() { "1", "2", "5", "7", "8", "10" };
+            return numbers;
         }
         public Model() { }
     }
