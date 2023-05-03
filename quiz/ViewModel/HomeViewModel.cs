@@ -9,7 +9,7 @@ using System.Windows.Input;
 namespace quiz.ViewModel
 {
     
-    class MainViewModel: INotifyPropertyChanged
+   public class HomeViewModel: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -55,12 +55,42 @@ namespace quiz.ViewModel
             get
             {
                 return submit ?? (submit = new RelayCommand(
-                    (p) => { QuizList = model.GetQuizList();}
+                    (p) => { QuizList = model.GetQuizList(FilePath);}
                     ,
                     p => !String.IsNullOrEmpty(filePath)
                     ));
             }
         }
-     
+
+        private ICommand startQuiz;
+        public ICommand StartQuiz
+        {
+            get
+            {
+                return startQuiz ?? (startQuiz=new RelayCommand(
+                    (p) => { },
+                    p=>true
+                    ));
+            }
+        }
+
+        private ICommand selectedQuiz;
+        public ICommand SelectedQuiz
+        {
+            get
+            {
+                return selectedQuiz ?? (selectedQuiz = new RelayCommand(
+                    (p) => { FilePath = "coooooooo"; },
+                    p => true
+                    ));
+            }
+        }
+       
+        public void SelectedQuiz1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            FilePath = "coooooooo";
+        }
+
+
     }
 }
