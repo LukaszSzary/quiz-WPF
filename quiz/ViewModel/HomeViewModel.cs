@@ -85,10 +85,10 @@ namespace quiz.ViewModel
                     ));
             }
         }
-       
+        
         public void SelectedQuiz1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            FilePath = "coooooooo";
+           FilePath = "coooooooo";
         }
 
 

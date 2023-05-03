@@ -31,7 +31,7 @@
             />
 
         <ListBox Name="Quizzes" Grid.Row="2" HorizontalContentAlignment="Stretch"
-                 
+                 SelectionChanged=
                  
                  ItemsSource="{Binding QuizList, Mode=OneWay}">
             <ListBox.ItemTemplate>

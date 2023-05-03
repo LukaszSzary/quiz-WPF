@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace quiz.ViewModel
+
+
+namespace quiz.ViewModel 
 {
-    class ViewModel
+    public class QuizViewModel 
     {
+        
     }
 }
