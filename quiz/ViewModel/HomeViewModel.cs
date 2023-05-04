@@ -61,35 +61,28 @@ namespace quiz.ViewModel
                     ));
             }
         }
+        private int _index=-1;
+        public int Index
+        {
+            get { return _index; }
+            set
+            {
+                _index = value;
+            }
+        }
 
         private ICommand startQuiz;
         public ICommand StartQuiz
         {
             get
             {
-                return startQuiz ?? (startQuiz=new RelayCommand(
-                    (p) => { },
-                    p=>true
-                    ));
+                return startQuiz ?? (startQuiz = new RelayCommand(
+                    (p) => { FilePath = Convert.ToString(Index); },
+                    p => Index != -1
+                    )) ;
             }
         }
 
-        private ICommand selectedQuiz;
-        public ICommand SelectedQuiz
-        {
-            get
-            {
-                return selectedQuiz ?? (selectedQuiz = new RelayCommand(
-                    (p) => { FilePath = "coooooooo"; },
-                    p => true
-                    ));
-            }
-        }
-        
-        public void SelectedQuiz1(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-           FilePath = "coooooooo";
-        }
 
 
     }

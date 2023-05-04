@@ -31,8 +31,8 @@
             />
 
         <ListBox Name="Quizzes" Grid.Row="2" HorizontalContentAlignment="Stretch"
-                 SelectionChanged=
                  
+                 SelectedIndex="{Binding Index}"
                  ItemsSource="{Binding QuizList, Mode=OneWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
