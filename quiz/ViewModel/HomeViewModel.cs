@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -77,13 +78,13 @@ namespace quiz.ViewModel
             get
             {
                 return startQuiz ?? (startQuiz = new RelayCommand(
-                    (p) => { FilePath = Convert.ToString(Index); },
+                    (p) => { Messenger.Default.Send(new MyMessage(Index)); },
                     p => Index != -1
                     )) ;
             }
         }
 
-
+        
 
     }
 }
