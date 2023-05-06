@@ -14,7 +14,7 @@ namespace quiz.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Model.Model model = new Model.Model();
+        private Model.HomeModel model = new Model.HomeModel();
 
         private String filePath=default;
         public String FilePath
@@ -78,7 +78,7 @@ namespace quiz.ViewModel
             get
             {
                 return startQuiz ?? (startQuiz = new RelayCommand(
-                    (p) => { Messenger.Default.Send(new MyMessage(Index)); },
+                    (p) => { Messenger.Default.Send(new MyMessage(Index,FilePath)); },
                     p => Index != -1
                     )) ;
             }

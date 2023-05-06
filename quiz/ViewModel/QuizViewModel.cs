@@ -11,24 +11,33 @@ namespace quiz.ViewModel
 {
     public class QuizViewModel : INotifyPropertyChanged
     {
+        
         public event PropertyChangedEventHandler PropertyChanged;
-
-        private Model.Model model = new Model.Model();
-
-        private int a; 
-        public int A
+        private Model.QuizModel model = new Model.QuizModel();
+        private String _path;
+        private List<Model.Question> Questions = new List<Model.Question>();
+        private int _indexOfQuiz;
+        public int IndexOfQuiz
         {
-            get { return a; }
+            get { return _indexOfQuiz; }
             private set
             {
-                a = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(A)));
+                _indexOfQuiz = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IndexOfQuiz)));
             }
         }
-        public QuizViewModel(int a)
+        public QuizViewModel(int a, String s)
         {
-            this.A = a;
+            this._indexOfQuiz = a;
+            this._path = s;
+            this.Questions = model.getQuestions(IndexOfQuiz, _path);
+            
         }
+       
+
+        
+
+        
         
     }
 }

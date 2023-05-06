@@ -8,10 +8,13 @@ namespace quiz.ViewModel
 {
     public class MyMessage
     {
-        public int a;
-        public MyMessage(int a)
+        public int a { get; }
+
+        public String path { get; }
+        public MyMessage(int a,String path)
         {
             this.a = a;
+            this.path = path;
         }
     }
 }

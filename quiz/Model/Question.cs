@@ -13,17 +13,17 @@ namespace quiz.Model
         private String []answers=new String[4];
         private bool[] ifCorrect = new bool[4];
        
-        public Question(String que,String ans1, String ans2, String ans3, String ans4,int ifcor1, int ifcor2, int ifcor3, int ifcor4)
+        public Question(String que,String []ans,int []ifcor)
         {
             this.question = que;
-            this.answers[0] = ans1;
-            this.answers[1] = ans2;
-            this.answers[2] = ans3;
-            this.answers[3] = ans4;
-            this.ifCorrect[0] = ifcor1 % 2 == 0;
-            this.ifCorrect[1] = ifcor2 % 2 == 0;
-            this.ifCorrect[2] = ifcor3 % 2 == 0;
-            this.ifCorrect[3] = ifcor4 % 2 == 0;
+            this.answers[0] = ans[0];
+            this.answers[1] = ans[1];
+            this.answers[2] = ans[2];
+            this.answers[3] = ans[3];
+            this.ifCorrect[0] = ifcor[0] % 2 == 0;
+            this.ifCorrect[1] = ifcor[1] % 2 == 0;
+            this.ifCorrect[2] = ifcor[2] % 2 == 0;
+            this.ifCorrect[3] = ifcor[3] % 2 == 0;
         }
         public String Answers(int i)
         {

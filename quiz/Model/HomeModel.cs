@@ -12,7 +12,7 @@ using System.Data.SQLite;
 
 namespace quiz.Model
 {
-    class Model
+    class HomeModel
     {
         public String chooseFile() {
             String name = default;
@@ -48,6 +48,6 @@ namespace quiz.Model
             "Nie udało się otworzyć lub odczytać bazy danych",e);
             }
         }
-        public Model() { }
+        public HomeModel() { }
     }
 }

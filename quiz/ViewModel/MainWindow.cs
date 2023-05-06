@@ -33,7 +33,7 @@ namespace quiz.ViewModel
         private void OnLoginMessage(MyMessage MyMessage)
         {
             
-            CurrentView = new QuizViewModel(MyMessage.a);
+            CurrentView = new QuizViewModel(MyMessage.a,MyMessage.path);
             
         }
     }
