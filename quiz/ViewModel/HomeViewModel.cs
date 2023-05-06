@@ -34,6 +34,7 @@ namespace quiz.ViewModel
             private set
             {
                 quizList = value;
+                quizList.Reverse();
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(QuizList)));
             }
         }

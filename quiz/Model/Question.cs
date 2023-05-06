@@ -10,28 +10,26 @@ namespace quiz.Model
     class Question
     {
         public String question {get;}
-        private String []answers=new String[4];
+        private String[] answers = new String[4];
         private bool[] ifCorrect = new bool[4];
        
-        public Question(String que,String []ans,int []ifcor)
+        public Question(String que,String []ans, Int64[]ifcor)
         {
             this.question = que;
-            this.answers[0] = ans[0];
-            this.answers[1] = ans[1];
-            this.answers[2] = ans[2];
-            this.answers[3] = ans[3];
+            this.answers = ans;
+            
             this.ifCorrect[0] = ifcor[0] % 2 == 0;
             this.ifCorrect[1] = ifcor[1] % 2 == 0;
             this.ifCorrect[2] = ifcor[2] % 2 == 0;
             this.ifCorrect[3] = ifcor[3] % 2 == 0;
         }
-        public String Answers(int i)
+        public String[] Answers()
         {
-            return answers[i];
+            return answers;
         }
-        public bool IfCorrect(int i)
+        public bool[] IfCorrect()
         {
-            return ifCorrect[i];
+            return ifCorrect;
         }
     }
 }
