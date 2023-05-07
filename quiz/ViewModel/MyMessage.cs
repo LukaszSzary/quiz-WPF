@@ -9,12 +9,27 @@ namespace quiz.ViewModel
     public class MyMessage
     {
         public int a { get; }
-
+        public String what { get; }
         public String path { get; }
-        public MyMessage(int a,String path)
+        public String score { get; }
+        public MyMessage(int a,String path,String what)
         {
             this.a = a;
             this.path = path;
+            this.what = what;
+        }
+        public MyMessage( String score, String path, String what)
+        {
+            this.score = score;
+            this.path = path;
+            this.what = what;
+
+        }
+        public MyMessage(String path, String what)
+        {
+            this.path = path;
+            this.what = what;
+
         }
     }
 }

@@ -33,8 +33,10 @@ namespace quiz.ViewModel
         private void OnLoginMessage(MyMessage MyMessage)
         {
             
-            CurrentView = new QuizViewModel(MyMessage.a,MyMessage.path);
-            
+            if(MyMessage.what=="quiz")CurrentView = new QuizViewModel(MyMessage.a,MyMessage.path);
+            if (MyMessage.what == "end") CurrentView = new EndViewModel(MyMessage.score,MyMessage.path);
+            if (MyMessage.what == "home") CurrentView = new HomeViewModel( MyMessage.path);
+
         }
     }
 }
